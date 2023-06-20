@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), build.props))\build.props" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>$(AppTargetFrameworks)</TargetFrameworks>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetCoreForce.Client\NetCoreForce.Client.csproj" />
+    <ProjectReference Include="..\NetCoreForce.Models\NetCoreForce.Models.csproj" />
+  </ItemGroup>  
+
+  <ItemGroup>
+    <None Update="credentials_dev.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
